@@ -2,9 +2,7 @@ Date now = new Date();
 String message = "Hello! This is a message from Java 9!\n" + "Time: " + now.toString();
 System.out.println(message);
 
-// List<Integer> list = Arrays.asList(1, 2, 3);
-// list.stream().forEach(n -> System.out.println(n * 2));
-
+// A class for person info
 class Person {
   private String name;
   private int age;
@@ -23,12 +21,16 @@ class Person {
   }
 }
 
+// A list containing a few Person objects
 List<Person> people = Arrays.asList(
   new Person("Bob", 22), new Person("Alice", 27), new Person("John", 25), new Person("Vahe", 29),
   new Person("Zaz", 31), new Person("Mark", 16), new Person("Mike", 19), new Person("Bob", 40)
 );
 
+// Get sorted names of persons
 Function<List<Person>, String> sortedNames = list -> list.stream().map(Person::getName).sorted().collect(Collectors.joining(","));
+
+// Get a string presentation of age range
 Function<Integer, String> ageRange = min -> "[" + (min * 10) + "," + ((min + 1) * 10 - 1) + "]";
 
 Map<Integer, List<Person>> groupByRange = people.stream().collect(Collectors.groupingBy(person -> person.getAge() / 10));
