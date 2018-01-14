@@ -2,38 +2,21 @@ Date now = new Date()
 String message = "Hello! This is a message from Java 9!\n" + "Time: " + now.toString()
 System.out.println(message)
 
-// A class for person info
-class Person {
-  private String name;
-  private int age;
-
-  public Person(String name, int age) {
-    this.name = name;
-    this.age = age;
-  }
-
-  public String getName() {
-    return name;
-  }
-
-  public int getAge() {
-    return age;
-  }
-
-  public String toString() {
-    return name + "\t" + age;
-  }
-}
+// Import the class for person info
+/open Person.java
 
 // A list of persons
 List<Person> people = new ArrayList<>();
-people.add(new Person("Alice", 20))
-people.add(new Person("Bob", 24))
-people.add(new Person("John", 25))
-people.add(new Person("Mike", 19))
-people.add(new Person("Mark", 19))
-people.add(new Person("Anna", 19))
-people.add(new Person("Bob", 40))
+people.add(new Person("Alice", "F", 20))
+people.add(new Person("Bob", "M", 20))
+people.add(new Person("John", "M", 25))
+people.add(new Person("Mike", "M", 19))
+people.add(new Person("Mark", "M", 19))
+people.add(new Person("Anna", "F", 19))
+people.add(new Person("Bob", "M", 40))
+people.add(new Person("Jane", "F", 40))
+people.add(new Person("Amy", "F", 25))
+people.add(new Person("Sheldon", "M", 25))
 System.out.println("\nAll people")
 people.forEach(System.out::println)
 
